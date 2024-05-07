@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "waynabox-angular17-workshop:build:production"
+              "buildTarget": "waynabox-angular17-workshop:build:production"
             },
             "development": {
-              "browserTarget": "waynabox-angular17-workshop:build:development"
+              "buildTarget": "waynabox-angular17-workshop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "waynabox-angular17-workshop:build"
+            "buildTarget": "waynabox-angular17-workshop:build"
           }
         },
         "test": {
