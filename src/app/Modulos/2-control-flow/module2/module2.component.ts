@@ -10,5 +10,6 @@ import { Component } from '@angular/core';
 })
 export class Module2Component {
   variable = true;
+  displayColor = true;
   switchValue = 'A';
 }

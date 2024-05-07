@@ -3,10 +3,27 @@
   
   <h2>ngIf -> if:</h2>
   <div>
-    <p *ngIf="variable">El valor de la variable es <span style="color: green;">{{ variable }}</span></p>
-    <p *ngIf="!variable">El valor de la variable es <span style="color: red;">{{ variable }}</span></p>
-  </div>
+    <p *ngIf="
+        variable && displayColor 
+        && !(!variable && displayColor) 
+        && !(variable && !displayColor); 
+        else elseBlock">
+        El valor de la variable es <span style="color: green;">{{ variable }}</span>
+    </p>
+    <p *ngIf="!variable && displayColor">
+        El valor de la variable es <span style="color: red;">{{ variable }}</span>
+    </p>
+    <p *ngIf="variable && !displayColor">
+        El valor de la variable es <span>{{ variable }}</span>
+    </p>
+</div>
+  <ng-template #elseBlock>
+    <p *ngIf="!variable && !displayColor">
+        El valor de la variable es <span>{{ variable }}</span>
+    </p>
+  </ng-template>
   <button (click)="variable = !variable">Toggle</button>
+  <button (click)="displayColor = !displayColor">Display color</button>
   <h2 style="margin-top: 40px;">ngFor -> for:</h2>
   <div>
     <ul>
