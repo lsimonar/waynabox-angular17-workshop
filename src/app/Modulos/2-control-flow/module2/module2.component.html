@@ -1,0 +1,27 @@
+<section class="wrapper">
+  <h1>Modulo 2:</h1>
+  
+  <h2>ngIf -> if:</h2>
+  <div>
+    <p *ngIf="variable">El valor de la variable es <span style="color: green;">{{ variable }}</span></p>
+    <p *ngIf="!variable">El valor de la variable es <span style="color: red;">{{ variable }}</span></p>
+  </div>
+  <button (click)="variable = !variable">Toggle</button>
+  <h2 style="margin-top: 40px;">ngFor -> for:</h2>
+  <div>
+    <ul>
+      <li *ngFor="let item of [1, 2, 3, 4, 5]">item {{ item }}</li>
+    </ul>
+  </div>
+  <h2 style="margin-top: 40px;">ngSwitch -> switch:</h2>
+  <div [ngSwitch]="switchValue">
+    <p *ngSwitchCase="'A'">case A</p>
+    <p *ngSwitchCase="'B'">case B</p>
+    <p *ngSwitchCase="'C'">case C</p>
+    <p *ngSwitchDefault>No hay case</p>
+  </div>
+  <button style="margin-right: 10px;" (click)="switchValue = 'A'">A</button>
+  <button style="margin-right: 10px;" (click)="switchValue = 'B'">B</button>
+  <button (click)="switchValue = 'C'">C</button>
+</section>
+
