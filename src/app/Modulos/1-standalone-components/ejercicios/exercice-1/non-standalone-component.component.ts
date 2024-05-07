@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-//Ejercicio 1: Refactorizar el componente para que sea un componente standalone
+//poner standalone flag & imports array
 
 @Component({
   selector: 'non-standalone-component',

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NonStandaloneComponent } from './exercises/1-standalone-components/components/non-standalone-component/non-standalone-component.component';
+import { NonStandaloneComponent } from './Modulos/1-standalone-components/ejercicios/exercice-1/non-standalone-component.component';
 import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
