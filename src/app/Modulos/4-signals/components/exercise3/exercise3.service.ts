@@ -17,7 +17,7 @@ export class Exercise3Service {
         observer.complete();
       })
       .catch(error => observer.error(error));
-    }, 3000);
+    }, 4000);
   });
 
   saveUser(user: string) {

@@ -1,7 +1,11 @@
 <section class="wrapper">
     <h1>Modulo 4: Signals</h1>
-    <exercise1 [counter]="counter"></exercise1>
-    <button style="margin-top: 1rem; margin-bottom: 2rem;" (click)="increment()">Incrementar</button>
+    <p style="margin-top: -15px;color:gray;font-size:16px">*Cada ejercicio es un componente separado, los limites del componente estan delineados con el borde</p>
+    <exercise1 [counter]="e1Counter"></exercise1>
+    <button style="margin-top: 1rem; margin-bottom: 2rem;" (click)="e1Increment()">Incrementar</button>
     <exercise2></exercise2>
     <exercise3></exercise3>
+    <exercise4 [counter]="e4Counter" [showCounter]="e4ShowCounter"></exercise4>
+    <button style="margin-top: 1rem; margin-bottom: 0.5rem;" (click)="e4Increment()">Incrementar</button>
+    <button style="margin-top: 1rem; margin-bottom: 2rem;" (click)="e4Toggle()">Mostrar/Ocultar</button>
 </section>
