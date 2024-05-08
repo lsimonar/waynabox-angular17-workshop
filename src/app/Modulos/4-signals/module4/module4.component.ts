@@ -17,13 +17,8 @@ import { Exercise4Component } from '../components/exercise4/exercise4.component'
   styleUrl: './module4.component.scss'
 })
 export class Module4Component {
-  e1Counter: number = 0;
   e4Counter: number = 0;
   e4ShowCounter: boolean = false;
-
-  e1Increment() {
-    this.e1Counter++;
-  }   
    
   e4Increment() {
     this.e4Counter++;
