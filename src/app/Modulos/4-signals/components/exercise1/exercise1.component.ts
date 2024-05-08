@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'exercise1',
@@ -7,21 +7,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './exercise1.component.html',
   styleUrl: '../../module4/module4.component.scss'
 })
-export class Exercise1Component implements OnInit {
-    counter: number = 1;
-    doubleCounter: number = 0;
-
-    ngOnInit() {
-        this.doubleCounter = this.counter * 2;
-    }
+export class Exercise1Component {
+    counter = signal(1);
+    doubleCounter = computed(() => this.counter() * 2);
 
     e1Increment() {
-      this.counter++;
-      this.doubleCounter = this.counter * 2;
+      this.counter.set(this.counter() + 1);
     }   
 
     e1Decrement() {
-      this.counter--;
-      this.doubleCounter = this.counter * 2;
+      this.counter.set(this.counter() - 1);
     }   
 }
