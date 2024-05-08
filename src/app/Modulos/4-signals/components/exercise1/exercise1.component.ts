@@ -5,7 +5,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   standalone: true,
   imports: [],
   templateUrl: './exercise1.component.html',
-  styleUrl: './exercise1.component.scss'
+  styleUrl: '../../module4/module4.component.scss'
 })
 export class Exercise1Component implements OnInit, OnChanges {
     @Input() counter: number = 0;
