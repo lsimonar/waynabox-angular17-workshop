@@ -7,4 +7,9 @@
     <exercise4 [counter]="e4Counter" [showCounter]="e4ShowCounter"></exercise4>
     <button style="margin-top: 1rem; margin-bottom: 0.5rem;" (click)="e4Increment()">Incrementar</button>
     <button style="margin-top: 1rem; margin-bottom: 2rem;" (click)="e4Toggle()">Mostrar/Ocultar</button>
+    <exercise5 [(counter)]="e5Counter" [(showCounter)]="e5ShowCounter"></exercise5>
+    <p>e5Counter: {{ e5Counter }}</p>
+    <p>e5ShowCounter: {{ e5ShowCounter }}</p>
+    <button style="margin-top: 1rem; margin-bottom: 2rem;" (click)="e5Increment()">Incrementar</button>
+    <button style="margin-top: 1rem; margin-bottom: 2rem;" (click)="e5Toggle()">Mostrar/Ocultar</button>
 </section>
