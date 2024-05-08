@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, computed } from '@angular/core';
+import { Component, EventEmitter, Input, Output, computed, model } from '@angular/core';
 
 @Component({
   selector: 'exercise5',
@@ -8,27 +8,15 @@ import { Component, EventEmitter, Input, Output, computed } from '@angular/core'
   styleUrl: '../../module4/module4.component.scss'
 })
 export class Exercise5Component {
-    @Input() counter = 0;
-    @Input() showCounter = false;
-    @Output() counterChange = new EventEmitter<number>();
-    @Output() showCounterChange = new EventEmitter<boolean>();
-    doubleCounter: number | string = 0;
-
-    ngOnInit() {
-        this.doubleCounter = this.showCounter ? this.counter * 2 : 'No se muestra el contador';
-    }
-
-    ngOnChanges() {
-        this.doubleCounter = this.showCounter ? this.counter * 2 : 'No se muestra el contador';
-    }
+    counter = model(0);
+    showCounter = model(false);
+    doubleCounter = computed(() => this.showCounter() ? this.counter() * 2 : 'No se muestra el contador');
 
     increment() {
-        this.counter++;
-        this.counterChange.emit(this.counter);
+        this.counter.set(this.counter() + 1);
     }
 
     toggle() {
-        this.showCounter = !this.showCounter;
-        this.showCounterChange.emit(this.showCounter);
+        this.showCounter.set(!this.showCounter());
     }
 }
