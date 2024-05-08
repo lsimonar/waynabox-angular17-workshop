@@ -14,6 +14,9 @@ import { Dummy2Component } from './dummy/dummy2/dummy2.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    Dummy2Component
   ]
 })
 export class Module1Module { }
