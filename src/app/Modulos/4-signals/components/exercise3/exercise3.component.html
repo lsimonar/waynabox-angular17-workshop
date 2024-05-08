@@ -2,7 +2,7 @@
     <p><b>Ejercicio 3:</b></p>
     <p>1. Usar un effect para guardar el nombre de usuario introducido (usando el exercise3.service) y loguear la respuesta en la consola. <br> 2. Implementar onCleanup para desinscribirse</p>
     <input type="text" [(ngModel)]="trackUserName" placeholder="Introduce tu nombre">
-    <button (click)="setUserName()">Set User</button>
+    <button style="margin-left: 10px;" (click)="setUserName()">Set User</button>
     @if (userName()) {
         <p>Hola {{ userName() }}</p>
     }

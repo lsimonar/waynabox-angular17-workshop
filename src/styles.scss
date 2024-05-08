@@ -1,8 +1,18 @@
 .wrapper {
-    margin: 100px auto;
+    margin: 100px 200px;
     max-width: 1200px;
 }
 
 body {
     font-size: 18px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: rgb(148, 0, 148);
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
 }
