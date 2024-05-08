@@ -1,54 +1,62 @@
 <section class="wrapper">
   <h1>Modulo 2: Control flow</h1>
-  
+
   <h2>ngIf -> if:</h2>
   <div>
-    <p *ngIf="
-        variable && displayColor 
-        && !(!variable && displayColor) 
-        && !(variable && !displayColor); 
-        else elseBlock">
+    @if (variable && displayColor) {
+      <p>
         El valor de la variable es <span style="color: green;">{{ variable }}</span>
-    </p>
-    <p *ngIf="!variable && displayColor">
+      </p>
+    } @else if (!variable && !displayColor) {
+        <p>
+          El valor de la variable es <span>{{ variable }}</span>
+        </p>
+    } @else if (!variable && displayColor) {
+      <p>
         El valor de la variable es <span style="color: red;">{{ variable }}</span>
-    </p>
-    <p *ngIf="variable && !displayColor">
+      </p>
+    } @else {
+      <p>
         El valor de la variable es <span>{{ variable }}</span>
-    </p>
+      </p>
+    }
   </div>
-  <ng-template #elseBlock>
-    <p *ngIf="!variable && !displayColor">
-        El valor de la variable es <span>{{ variable }}</span>
-    </p>
-  </ng-template>
   <button (click)="variable = !variable">Toggle</button>
   <button (click)="displayColor = !displayColor">Display color</button>
   <h2 style="margin-top: 40px;">ngFor -> for:</h2>
   <div>
     <ul>
-        <ng-container *ngIf="items.length > 0">
-            <li *ngFor="let item of items">item {{ item }}</li>
-        </ng-container>
-        <ng-container *ngIf="items.length === 0">
-            <li>No hay items</li>
-        </ng-container>
+        @for (item of items; track item) {
+          <li>item {{ item }}</li>
+        } @empty {
+          <li>No hay items</li>
+        }
     </ul>
   </div>
   <button (click)="items = [1, 2, 3, 4, 5]">Cargar items</button>
   <button (click)="items = []">Vaciar items</button>
   <h2 style="margin-top: 40px;">ngSwitch -> switch:</h2>
-  <div [ngSwitch]="switchValue">
-    <p *ngSwitchCase="'A'">case A</p>
-    <p *ngSwitchCase="'B'">case B</p>
-    <p *ngSwitchCase="'C'">case C</p>
-    <p *ngSwitchDefault>No hay case</p>
-  </div>
+  <p>
+    @switch (switchValue) {
+      @case ('A') {
+        case A
+      }
+      @case ('B') {
+        case B
+      }
+      @case ('C') {
+        case C
+      }
+      @default {
+        No hay case
+      }
+    }
+  </p>
   <button style="margin-right: 10px;" (click)="switchValue = 'A'">A</button>
   <button style="margin-right: 10px;" (click)="switchValue = 'B'">B</button>
   <button (click)="switchValue = 'C'">C</button>
 
-  <p><b>Ejercicio 1:</b> Usar el control-flow schematic para refactorizar las directivas estructurales</p>
+  <p><b>Ejercicio 1:</b> Usar el control-flow schematic (<b>ng generate &#64;angular/core:control-flow</b>) para refactorizar las directivas estructurales</p>
   <p><b>Ejercicio 2:</b> Refactorizar el if para que use else ifs </p>
   <p><b>Ejercicio 3:</b> Refactorizar el for para que use empty </p>
 
