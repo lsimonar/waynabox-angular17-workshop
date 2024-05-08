@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'modulo-2',
     component: Module2Component
+  },
+  {
+    path: 'modulo-3',
+    loadChildren: () => import('./Modulos/3-lazy-loading/module3/module3.module').then(m => m.Module3Module)
   }
 ];
 
