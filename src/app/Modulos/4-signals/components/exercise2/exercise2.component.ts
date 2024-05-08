@@ -9,12 +9,12 @@ import { Component, computed, signal } from '@angular/core';
 })
 export class Exercise2Component {
   counter = signal(0);
-  shouldShowCounter = false;
+  shouldShowCounter = signal(false);
 
   //arreglar este computed
   doubleCounter = computed(() => 
   {
-    if (this.shouldShowCounter) {
+    if (this.shouldShowCounter()) {
       return this.counter() * 2;
     }
     return 'No se muestra el contador';

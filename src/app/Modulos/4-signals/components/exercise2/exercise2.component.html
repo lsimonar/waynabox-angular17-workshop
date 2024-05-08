@@ -2,6 +2,6 @@
     <p><b>Ejercicio 2:</b> Arreglar el computed signal</p>
     <p>Counter: {{ counter() }}</p>
     <p>Double Counter: {{ doubleCounter() }}</p>
-    <button (click)="shouldShowCounter = !shouldShowCounter">Mostrar/Ocultar</button>
+    <button (click)="shouldShowCounter.set(!shouldShowCounter())">Mostrar/Ocultar</button>
     <button (click)="increment()">Incrementar</button>
 </div>
