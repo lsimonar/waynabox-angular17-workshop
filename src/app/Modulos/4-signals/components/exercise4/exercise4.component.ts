@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'exercise4',
@@ -7,25 +7,9 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   templateUrl: './exercise4.component.html',
   styleUrl: '../../module4/module4.component.scss'
 })
-export class Exercise4Component implements OnInit, OnChanges{
-  @Input() counter: number = 0;
-  @Input() showCounter: boolean = false;
-  doubleCounter: number | string = 0;
-
-  ngOnInit() {
-    this.setDoubleCounter();
-  }
-
-  ngOnChanges(): void {
-    this.setDoubleCounter();
-  }
-
-  setDoubleCounter() {
-    if(this.showCounter) {
-      this.doubleCounter = this.counter * 2;
-    } else {
-      this.doubleCounter = 'No se muestra el contador';
-    }  
-  }
+export class Exercise4Component{
+  counter = input(0);
+  showCounter = input(false);
+  doubleCounter = computed(() => this.showCounter() ? this.counter() * 2 : 'No se muestra el contador');
 
 }
