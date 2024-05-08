@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'exercise1',
@@ -7,15 +7,21 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   templateUrl: './exercise1.component.html',
   styleUrl: '../../module4/module4.component.scss'
 })
-export class Exercise1Component implements OnInit, OnChanges {
-    @Input() counter: number = 0;
+export class Exercise1Component implements OnInit {
+    counter: number = 1;
     doubleCounter: number = 0;
 
     ngOnInit() {
         this.doubleCounter = this.counter * 2;
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    e1Increment() {
+      this.counter++;
       this.doubleCounter = this.counter * 2;
-    }
+    }   
+
+    e1Decrement() {
+      this.counter--;
+      this.doubleCounter = this.counter * 2;
+    }   
 }
