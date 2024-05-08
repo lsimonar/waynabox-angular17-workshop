@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NonStandaloneComponent } from './Modulos/1-standalone-components/ejercicios/exercice-1/non-standalone-component.component';
 import { IndexComponent } from './index/index.component';
 import { Module2Component } from './Modulos/2-control-flow/module2/module2.component';
+import { Module3Component } from './Modulos/3-lazy-loading/module3/module3.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'modulo-3',
-    loadChildren: () => import('./Modulos/3-lazy-loading/module3/module3.module').then(m => m.Module3Module)
+    component: Module3Component
   }
 ];
 
