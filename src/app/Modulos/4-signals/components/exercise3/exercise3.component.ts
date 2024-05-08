@@ -17,7 +17,18 @@ export class Exercise3Component {
     
   constructor(private exercise3Service: Exercise3Service) {
 
-      //implementar el effect aqui
+      effect((onCleanup) => {
+        if(this.userName()){
+          const user = this.exercise3Service.saveUser(this.userName()).subscribe(
+            (response) => {
+              console.log(response);
+            }
+            );
+            onCleanup(() => {
+              user.unsubscribe();
+            });
+          }
+      });
    }
 
   setUserName() {
