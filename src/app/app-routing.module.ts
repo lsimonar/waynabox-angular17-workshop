@@ -13,19 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'modulo-1',
-    component: NonStandaloneComponent
+    loadComponent: () => import('./Modulos/1-standalone-components/ejercicios/exercice-1/non-standalone-component.component').then(m => m.NonStandaloneComponent)
   },
   {
     path: 'modulo-2',
-    component: Module2Component
+    loadComponent: () => import('./Modulos/2-control-flow/module2/module2.component').then(m => m.Module2Component)
   },
   {
     path: 'modulo-3',
-    component: Module3Component
+    loadChildren: () => import('./Modulos/3-lazy-loading/module3/module3.module').then(m => m.Module3Module)
   },
   {
     path: 'modulo-4',
-    component: Module4Component
+    loadComponent: () => import('./Modulos/4-signals/module4/module4.component').then(m => m.Module4Component)
   }
 ];
 
